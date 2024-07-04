@@ -4,7 +4,9 @@ This repository implements the human mesh recovery model introduced in the ECCV-
 
 If you find this code useful, please consider citing the associated [paper](https://g-fiche.github.io/research-pages/vqhps/).
 
-![VQ-HPS](images/qualitative.png)
+![VQ-HPS](images/teaser.png)
+
+This work introduces a novel paradigm to address the human pose and shape estimation problem, involving a low-dimensional discrete latent representation of the human mesh and framing human pose and shape estimation as a classification task. This allows us to obtain accurate predictions even when little training data is available (as shown on the image above).
 
 
 ## Installation
