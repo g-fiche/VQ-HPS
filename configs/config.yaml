@@ -1,0 +1,41 @@
+train:
+  batch: 32
+  lr: 1e-4
+  device: 'cuda'
+  total_epoch: 200
+  workers: 8
+  weight_decay: 1e-3
+
+
+vqvaemesh:
+  num_embeddings: 512
+  embedding_dim: 9
+  commitment_cost: 0.25
+  decay: 0.99
+  num_quantizer: 1
+  
+
+modelconv:
+  batch: 32
+  connection_folder: body_models/ConnectionMatrices/
+  initial_connection_fn: body_models/ConnectionMatrices/_pool0.npy
+  connection_layer_lst: ["pool0", "pool1", "pool2","pool3", "pool4", "pool5", "pool6","unpool6", "unpool5","unpool4","unpool3","unpool2","unpool1", "unpool0"]
+  channel_lst: [ 32, 32,  64, 64, 128, 128, 9, 128, 128,64, 64,32, 32,3]
+  weight_num_lst: [9,0, 9,0, 9,0, 9,9, 0,9,0,9,0,9]
+  residual_rate_lst: [0,1,  0,1,  0,1,  0,0,  1,0,  1,0,  1,0]
+  
+  
+regressor:
+  cfg: configs/transformer.txt
+  autoreg: True
+  backbone: 'hrnet_w48'
+  num_vertex: 54
+  
+training_data:
+  file: 'full_train.txt'
+  
+validation_data:
+  file: '3DPW/3DPW_validation.npz'
+
+test_data:
+  file: '3DPW/3DPW_test.npz'

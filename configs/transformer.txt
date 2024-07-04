@@ -1,0 +1,10 @@
+{
+    "model_dim": 512,
+    "dropout": 0.2,
+    "nhead": 8,
+    "feedforward_dim": 1024,
+    "num_enc_layers": 1,
+    "num_dec_layers": 1,
+    "dict_size": 512,
+    "block_size": 54
+}
