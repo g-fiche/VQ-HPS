@@ -54,7 +54,7 @@ def main(cfg: DictConfig):
         p.numel() for p in mesh_regressor.parameters() if p.requires_grad
     )
     print(f"Total parameters: {pytorch_total_params}")
-    mesh_regressor.load("checkpoint/MESH_REGRESSOR/vqhps_resnet")
+    mesh_regressor.load("checkpoint/MESH_REGRESSOR/vqhps_hrnet")
 
     """Joint regressor"""
     J_regressor = torch.from_numpy(np.load("body_models/J_regressor_h36m.npy")).float()
