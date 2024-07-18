@@ -44,6 +44,7 @@ Please refer to the official [pytorch3d](https://github.com/facebookresearch/pyt
 This repository relies on various external downloads in order to run the code. Here is a description of each of them.
 
 First, we create folders to store the downloads:
+
     mkdir body_models
     mkdir datasets
     mkdir checkpoint
