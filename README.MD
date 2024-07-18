@@ -61,6 +61,8 @@ ${checkpoint}
 |   |-- mesh_vqvae_54
 ```  
 
+Place the ```tpose.npy``` file in the ```body_models``` directory.
+
 
 ### Body models
 
