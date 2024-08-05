@@ -98,8 +98,8 @@ def mpjpe(gt_v, pred_v, joints_reg, reduction=True):
     gt_joints = torch.matmul(J_regressor_batch, gt_v)
     pred_joints = torch.matmul(J_regressor_batch, pred_v)
     return dist3d(
-        gt_joints[:, H36M_TO_J17][:, :14],
-        pred_joints[:, H36M_TO_J17][:, :14],
+        gt_joints[:, H36M_TO_J17],
+        pred_joints[:, H36M_TO_J17],
         reduction,
     )
 
@@ -109,8 +109,8 @@ def pa_mpjpe(gt_v, pred_v, joints_reg, reduction=True):
     gt_joints = torch.matmul(J_regressor_batch, gt_v)
     pred_joints = torch.matmul(J_regressor_batch, pred_v)
     return pa_v2v(
-        gt_joints[:, H36M_TO_J17][:, :14],
-        pred_joints[:, H36M_TO_J17][:, :14],
+        gt_joints[:, H36M_TO_J17],
+        pred_joints[:, H36M_TO_J17],
         reduction,
     )
 
